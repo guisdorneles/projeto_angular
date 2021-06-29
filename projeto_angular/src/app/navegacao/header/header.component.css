@@ -1,0 +1,68 @@
+.foto-usuario,
+.nomeUsuario {
+    display: initial;
+}
+
+.header>span {
+    padding-left: 20px;
+}
+
+.navHeader {
+    display: flex;
+    align-items: center;
+}
+
+.navHeader li {
+    margin-left: 20px;
+}
+
+.saida {
+    margin-left: 95px !important;
+}
+
+.navHeader li:nth-child(2) {
+    width: 170px;
+}
+
+.foto-usuario img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #FFFFFF;
+}
+
+.saida img {
+    width: 30px;
+    height: 30px;
+}
+
+.textoCentralizado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
+}
+
+
+/*media*/
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .foto-usuario,
+    .nomeUsuario {
+        display: initial;
+    }
+    .navHeader li:nth-child(2) {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .foto-usuario,
+    .nomeUsuario {
+        display: initial;
+    }
+    .navHeader li:nth-child(2) {
+        width: 100%;
+    }
+}

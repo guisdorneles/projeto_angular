@@ -1,0 +1,12 @@
+<nav class="menu">
+    <ul>
+        <li *ngFor="let item of listaMenu">
+            <a href="#">
+                <img src="{{item.icone}}">
+                <span class="nav-text">
+                    {{item.descricao}}
+                </span>
+            </a>
+        </li>
+    </ul>
+</nav>
