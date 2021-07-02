@@ -5,20 +5,91 @@ html {
     margin: 0;
 }
 
-ul {
-    padding: 0;
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+font,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+menu,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+tt,
+u,
+ul,
+var {
     margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+ul {
     list-style: none;
+}
+
+.container {
+    display: block;
+    left: 0;
+    min-height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
 }
 
 
 /* 
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
 .borda {
     border: 1px solid;
 }
@@ -41,20 +112,9 @@ ul {
         flex-wrap: wrap;
         flex-direction: row;
     }
-} */
-
-.container {
-    min-height: 100%;
-    position: relative;
 }
 
-.header {
-    background: #3e4c62;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 60px;
-}
+*/
 
 
 /* 
