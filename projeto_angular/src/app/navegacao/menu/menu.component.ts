@@ -12,6 +12,7 @@ export class MenuComponent implements OnInit {
     constructor() {}
     ngOnInit(): void { }
     itemMenuActive: boolean = false;
+    activeScrollY: boolean = true;
     listaMenu:any[] = [
         {
           descricao: "Início",

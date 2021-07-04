@@ -1,4 +1,4 @@
-<div class="container-menu">
+<div class="container-menu" [ngClass]="{'scroll-menu': activeScrollY}">
     <ul class="flex-menu">
         <li *ngFor="let item of listaMenu" class="flex-item-menu">
             <a routerLink="{{item.rota}}" (click)='itemMenuActive = true'>

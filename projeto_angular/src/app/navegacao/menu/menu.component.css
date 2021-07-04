@@ -53,3 +53,36 @@
 .active-item-menu {
     color: #FFFFFF;
 }
+
+
+/*inicio para fazer a barra de rolagem no menu caso haja muitos icones*/
+
+.scroll-menu {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    /* width: 7px; */
+    width: 0;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/*inicio para fazer a barra de rolagem no menu caso haja muitos icones*/

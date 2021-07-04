@@ -8,7 +8,6 @@
     display: flex;
     background: #3e4c62;
     height: 70px;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 0 16px;
@@ -28,10 +27,11 @@
 }
 
 .flex-item span {
-    padding: 18px;
+    padding: 18px 30px;
+    color: #FFFFFF;
 }
 
-.flex-item-end {
+.end {
     flex: none;
     justify-content: flex-end;
 }
