@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { DataService } from "src/app/services/data.service";
+import { Menu } from "../models/menu";
 
 @Component({
     selector: 'app-menu',
@@ -9,8 +11,19 @@ import { Component, OnInit } from "@angular/core";
 
 export class MenuComponent implements OnInit {
 
-    constructor() {}
-    ngOnInit(): void { }
+  menu: Menu = {
+    isExpansive: false,
+    isVisible: false
+  };
+
+constructor(private data: DataService) {
+    this.data.currentMessage.subscribe( menu => this.menu = menu);    
+  }
+
+    ngOnInit(){ 
+       this.data.currentMessage.subscribe( menu => this.menu = menu);
+    }
+
     itemMenuActive: boolean = false;
     activeScrollY: boolean = true;
     listaMenu:any[] = [

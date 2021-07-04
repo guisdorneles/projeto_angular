@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { BlockLike } from "typescript";
-
+import { Menu } from "../models/menu";
+import { DataService } from "src/app/services/data.service";
 
 @Component({
     selector: 'app-header',
@@ -10,12 +10,29 @@ import { BlockLike } from "typescript";
 
 export class HeaderComponent implements OnInit {
 
-    constructor() {}
+    menu: Menu = {
+        isExpansive: false,
+        isVisible: false
+    };
+    expandeMenu : boolean = false;
+    constructor(private data: DataService) {
+    }
+
     ngOnInit(): void { }
-    @Input() expandMenu: boolean = false; 
+
+    expandirMenu(){
+        this.data.changeMessage(
+            this.menu = {
+                isExpansive : true,
+                isVisible : true
+            }
+        )        
+    }
     imageUserIconPath: string = "./assets/imagens/icone-usuario.jpg";
     nomeUsuario: string = "Guilherme";
     imageExitIconPath: string = "./assets/imagens/exit-icon.png";
 
 }
+
+
 

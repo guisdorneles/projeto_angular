@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NavegacaoModule } from './components/navegacao/navegacao.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
