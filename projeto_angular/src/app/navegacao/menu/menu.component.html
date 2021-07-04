@@ -1,39 +1,13 @@
 <div class="container-menu">
     <ul class="flex-menu">
-        <li class="flex-item-menu">
-            <a>
-                <i class="bi bi-house-door-fill menu-icon"> </i>
-                <span>Menu</span>
+        <li *ngFor="let item of listaMenu" class="flex-item-menu">
+            <a routerLink="{{item.rota}}" (click)='itemMenuActive = true'>
+                <!-- <a routerLink="{{item.rota}}" (click)='itemMenuActive = true'> -->
+                <i class="{{item.icone}} menu-icon" routerLinkActive="active-item-menu"> </i>
+                <span class="flex-item-menu-text" routerLinkActive="active-item-menu">{{item.descricao}}</span>
+                <!-- <i class="{{item.icone}} menu-icon" [ngClass]="{'active-item-menu': itemMenuActive}"> </i>
+                <span class="flex-item-menu-text" [ngClass]="{'active-item-menu': itemMenuActive}">{{item.descricao}}</span> -->
             </a>
-
-        </li>
-        <li class="flex-item-menu">
-            <a>
-                <i class="bi bi-house-door-fill menu-icon"> </i>
-                <span>Menu</span>
-            </a>
-
-        </li>
-        <li class="flex-item-menu">
-            <a>
-                <i class="bi bi-house-door-fill menu-icon"> </i>
-                <span>Menu</span>
-            </a>
-
-        </li>
-        <li class="flex-item-menu">
-            <a>
-                <i class="bi bi-house-door-fill menu-icon"> </i>
-                <span>Menu</span>
-            </a>
-
-        </li>
-        <li class="flex-item-menu">
-            <a>
-                <i class="bi bi-house-door-fill menu-icon"> </i>
-                <span>Menu</span>
-            </a>
-
         </li>
     </ul>
 </div>

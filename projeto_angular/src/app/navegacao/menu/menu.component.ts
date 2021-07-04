@@ -11,27 +11,32 @@ export class MenuComponent implements OnInit {
 
     constructor() {}
     ngOnInit(): void { }
-
+    itemMenuActive: boolean = false;
     listaMenu:any[] = [
         {
-          descricao: "Item_1",
-          icone: "./assets/imagens/icone-usuario.jpg"
+          descricao: "Início",
+          icone: "bi bi-house-door-fill",
+          rota: "/home"
         },
         {
-          descricao: "Item_2",
-          icone: "./assets/imagens/icone-usuario.jpg"
+          descricao: "Usuário",
+          icone: "bi bi-people-fill",
+          rota: "/usuario"
         },
         {
-          descricao: "Item_3",
-          icone: "./assets/imagens/icone-usuario.jpg"
+          descricao: "Relatórios",
+          icone: "bi bi-file-earmark-bar-graph-fill",
+          rota: "/relatorio"
         },
         {
-          descricao: "Item_4",
-          icone: "./assets/imagens/icone-usuario.jpg"
+          descricao: "Compras",
+          icone: "bi bi-bag-check-fill",
+          rota: "/compras"
         },
         {
-          descricao: "Item_5",
-          icone: "./assets/imagens/icone-usuario.jpg"
+          descricao: "Configuração",
+          icone: "bi bi-gear-fill",
+          rota: "/configuracao"
         }
       ]
 }
