@@ -86,3 +86,8 @@
 
 
 /*inicio para fazer a barra de rolagem no menu caso haja muitos icones*/
+
+.menu-opened {
+    z-index: 2020;
+    width: 180px;
+}

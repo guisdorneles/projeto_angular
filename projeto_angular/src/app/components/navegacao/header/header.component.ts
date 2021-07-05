@@ -10,24 +10,25 @@ import { DataService } from "src/app/services/data.service";
 
 export class HeaderComponent implements OnInit {
 
-    menu: Menu = {
-        isExpansive: false,
-        isVisible: false
-    };
-    expandeMenu : boolean = false;
+    menu: Menu = new Menu();
+    expandeMenu: boolean;
+
     constructor(private data: DataService) {
+        data = new DataService();
     }
 
     ngOnInit(): void { }
 
-    expandirMenu(){
-        this.data.changeMessage(
-            this.menu = {
-                isExpansive : true,
-                isVisible : true
-            }
-        )        
-    }
+    expansiveMenu: boolean = false;  
+
+    expandirMenu(expansive: boolean) {      
+        this.expansiveMenu = !this.expansiveMenu;
+        this.menu.isExpansive = this.expansiveMenu;       
+        this.menu.isVisible = true;
+        this.data.changeMessage(this.menu);   
+    };
+
+
     imageUserIconPath: string = "./assets/imagens/icone-usuario.jpg";
     nomeUsuario: string = "Guilherme";
     imageExitIconPath: string = "./assets/imagens/exit-icon.png";

@@ -11,18 +11,14 @@ import { Menu } from "../models/menu";
 
 export class MenuComponent implements OnInit {
 
-  menu: Menu = {
-    isExpansive: false,
-    isVisible: false
-  };
+  menu: Menu = new Menu();
+  
+constructor(private data: DataService) {}
 
-constructor(private data: DataService) {
-    this.data.currentMessage.subscribe( menu => this.menu = menu);    
-  }
-
-    ngOnInit(){ 
+    ngOnInit(){      
        this.data.currentMessage.subscribe( menu => this.menu = menu);
     }
+
 
     itemMenuActive: boolean = false;
     activeScrollY: boolean = true;

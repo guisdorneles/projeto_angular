@@ -1,4 +1,4 @@
-export interface Menu{
-    isExpansive: boolean,
-    isVisible: boolean    
+export class Menu{
+    isExpansive: boolean;
+    isVisible: boolean;
   }
