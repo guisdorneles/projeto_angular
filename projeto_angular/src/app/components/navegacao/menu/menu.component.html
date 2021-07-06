@@ -1,4 +1,4 @@
-<div class="container-menu" [ngClass]="{'menu-opened':menu.isExpansive}">
+<nav class="container-menu" [ngClass]="{'menu-opened':menu.isExpansive}">
     <ul class="flex-menu">
         <li *ngFor="let item of listaMenu" class="flex-item-menu">
             <a routerLink="{{item.rota}}" (click)='itemMenuActive = true'>
@@ -10,4 +10,4 @@
             </a>
         </li>
     </ul>
-</div>
+</nav>
