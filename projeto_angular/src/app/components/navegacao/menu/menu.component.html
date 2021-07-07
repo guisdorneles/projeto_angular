@@ -1,4 +1,4 @@
-<nav class="container-menu" [ngClass]="menu.isExpansive ? 'menu-opened': 'menu-closed'">
+<nav class="container-menu" [ngClass]="{'menu-opened':menu.isExpansive}">
     <ul class="flex-menu">
         <li *ngFor="let item of listaMenu" class="flex-item-menu">
             <a routerLink="{{item.rota}}" (click)='itemMenuActive = true'>

@@ -96,9 +96,8 @@
 /*inicio do menu expandido*/
 
 .menu-opened {
+    z-index: 2020;
     width: 180px;
-    transition: flex 0.3s ease-out;
-    -webkit-transition: flex 0.3s ease-out;
 }
 
 .menu-opened a {
