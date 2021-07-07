@@ -10,7 +10,7 @@ export class NotFoundComponent implements OnInit{
 
     ngOnInit(): void {}
     constructor(){}
-
+    fakeArray = new Array(30);
     imageNotFound: string = "./assets/imagens/erro-404.png";
 
 }

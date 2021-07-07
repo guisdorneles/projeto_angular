@@ -95,46 +95,8 @@ ul {
 }
 
 .border_aux {
-    border: 2px solid red;
+    border: 1px solid red;
 }
-
-
-/* 
-.borda {
-    border: 1px solid;
-}
-
-.white {
-    color: #FFFFFF;
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .flex-container {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-}
-
-@media screen and (min-width: 1023px) {
-    .flex-container {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-}
-
-*/
-
-
-/* 
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    background: #6cf;
-} */
 
 .footer {
     position: absolute;
@@ -143,3 +105,35 @@ ul {
     height: 60px;
     background: #6cf;
 }
+
+
+/*inicio para fazer a barra de rolagem no menu caso haja muitos icones*/
+
+.scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/*fim  para fazer a barra de rolagem no menu caso haja muitos icones*/
