@@ -29,20 +29,16 @@ export class GraficosComponent implements OnInit {
       yAxes: [{
         gridLines: {
           display: false
-        },
-        ticks: {
-          display: false
         }
       }],
     }
   };
-  public barChartLabels: Label[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels: Label[] = [ '2010', '2011', '2012'] ;
   public barChartType: ChartType = 'horizontalBar';
   public barChartLegend = true;
 
   public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A', stack: 'a' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B', stack: 'a' }
+    { data: [ 81, 56, 55, 40], label: 'Series A', stack: 'a' }
   ];
 
   public pieChartOptions: ChartOptions = {

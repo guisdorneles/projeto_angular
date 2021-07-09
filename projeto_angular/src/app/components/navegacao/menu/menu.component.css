@@ -98,6 +98,7 @@
 }
 
 .menu-closed {
+    height: 100%;
     width: 72px;
     left: 0;
     transform: translate(0, 0);

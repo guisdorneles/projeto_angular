@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { NavegacaoModule } from './components/navegacao/navegacao.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DataService } from './services/data.service';
+import { DataService } from './shared/services/data.service.menu';
 
 
 @NgModule({

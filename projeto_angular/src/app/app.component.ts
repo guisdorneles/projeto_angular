@@ -1,7 +1,7 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
-import { Menu } from './components/navegacao/models/menu';
-import { DataService } from './services/data.service';
+import { Menu } from './shared/models/menu';
+import { DataService } from './shared/services/data.service.menu';
 
 @Component({
   selector: 'app-root',

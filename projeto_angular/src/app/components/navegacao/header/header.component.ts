@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Menu } from "../models/menu";
-import { DataService } from "src/app/services/data.service";
+import { Menu } from "../../../shared/models/menu";
+import { DataService } from "src/app/shared/services/data.service.menu";
 
 @Component({
     selector: 'app-header',
