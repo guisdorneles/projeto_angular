@@ -22,31 +22,36 @@ constructor(private data: DataService) {}
 
     itemMenuActive: boolean = false;
     activeScrollY: boolean = true;
-    listaMenu:any[] = [
+    listaItemMenu:any[] = [
         {
           descricao: "Início",
           icone: "bi bi-house-door-fill",
-          rota: "/home"
+          rota: "/home",
+          habilitado: true
         },
         {
           descricao: "Usuário",
           icone: "bi bi-people-fill",
-          rota: "/usuario"
+          rota: "/usuario",
+          habilitado: true
         },
         {
           descricao: "Relatórios",
           icone: "bi bi-file-earmark-bar-graph-fill",
-          rota: "/relatorio"
+          rota: "/relatorio",
+          habilitado: true
         },
         {
           descricao: "Gráficos",
           icone: "bi bi-file-bar-graph",
-          rota: "/graficos"
+          rota: "/graficos",
+          habilitado: true
         },        
         {
           descricao: "Configuração",
           icone: "bi bi-gear-fill",
-          rota: "/configuracao"
+          rota: "/configuracao",
+          habilitado: false
         }
       ]
 }
