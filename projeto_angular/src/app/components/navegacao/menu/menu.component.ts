@@ -39,10 +39,10 @@ constructor(private data: DataService) {}
           rota: "/relatorio"
         },
         {
-          descricao: "Compras",
-          icone: "bi bi-bag-check-fill",
-          rota: "/compras"
-        },
+          descricao: "Gráficos",
+          icone: "bi bi-file-bar-graph",
+          rota: "/graficos"
+        },        
         {
           descricao: "Configuração",
           icone: "bi bi-gear-fill",

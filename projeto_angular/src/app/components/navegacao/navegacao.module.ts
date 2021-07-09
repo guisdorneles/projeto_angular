@@ -6,6 +6,8 @@ import { MenuComponent } from "./menu/menu.component";
 import { HomeComponent } from "../home/home.component";
 import { FooterComponent } from "./footer/footer.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
+import { ChartsModule } from 'ng2-charts';
+import { GraficosComponent } from "../graficos/graficos.component";
 
 @NgModule({
     declarations: [
@@ -13,17 +15,20 @@ import { NotFoundComponent } from "./not-found/not-found.component";
         MenuComponent,
         HomeComponent, 
         FooterComponent,
+        GraficosComponent,
         NotFoundComponent
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        ChartsModule
     ],
     exports: [
         HeaderComponent,
         MenuComponent,
         HomeComponent, 
         FooterComponent,
+        GraficosComponent,
         NotFoundComponent
     ]
 })   
