@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { DataService } from "src/app/shared/services/data.service.menu";
-import { Menu } from "../../../shared/models/menu";
+import { DataServiceMenu } from "src/app/shared/services/data.service.menu";
+import { Menu } from "../../../shared/models/menu/menu";
 
 @Component({
     selector: 'app-menu',
@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
 
   menu: Menu = new Menu();
   
-constructor(private data: DataService) {}
+constructor(private data: DataServiceMenu) {}
 
     ngOnInit(){      
        this.data.currentMessage.subscribe( menu => this.menu = menu);

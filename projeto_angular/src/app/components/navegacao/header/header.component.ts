@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Menu } from "../../../shared/models/menu";
-import { DataService } from "src/app/shared/services/data.service.menu";
+import { Menu } from "../../../shared/models/menu/menu";
+import { DataServiceMenu } from "src/app/shared/services/data.service.menu";
 
 @Component({
     selector: 'app-header',
@@ -13,8 +13,8 @@ export class HeaderComponent implements OnInit {
     menu: Menu = new Menu();
     expandeMenu: boolean;
 
-    constructor(private data: DataService) {
-        data = new DataService();
+    constructor(private data: DataServiceMenu) {
+        data = new DataServiceMenu();
     }
 
     ngOnInit(): void { }

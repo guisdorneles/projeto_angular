@@ -4,24 +4,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavegacaoModule } from './components/navegacao/navegacao.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DataService } from './shared/services/data.service.menu';
-import { LoginComponent } from './components/login/login.component';
+import { DataServiceMenu } from './shared/services/data.service.menu';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NavegacaoModule,
-    BrowserAnimationsModule,
-    NgbModule
+    BrowserAnimationsModule
   ],
-  providers: [DataService],
+  providers: [DataServiceMenu],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
