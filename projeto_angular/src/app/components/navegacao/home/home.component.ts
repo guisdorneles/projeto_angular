@@ -1,7 +1,5 @@
 import { OnInit } from "@angular/core";
 import { Component } from "@angular/core";
-import { Menu } from "src/app/shared/models/menu/menu";
-import { DataServiceMenu } from "src/app/shared/services/data.service.menu";
  
 @Component({
     selector: 'app-home',
@@ -11,6 +9,35 @@ import { DataServiceMenu } from "src/app/shared/services/data.service.menu";
 
 export class HomeComponent implements OnInit{
     ngOnInit(): void {}
+    dadosCliente: any;
+    dadosComponent : any = 
+        {
+            "texto_placeholder": "Pesquisar por nome",
+            "cabecalho" : ["Nome", "Endereço", "Telefone"],
+            "dataSet" : [
+                {
+                    "nome" : "Guilherme",
+                    "endereco" : "Rua do Bosque, 236",
+                    "telefone" : "4444-4444",
+                    "url_foto" : "./assets/imagens/icone-usuario.jpg"
+                },
+                {
+                    "nome" : "Kelly",
+                    "endereco" : "Av dos Estados, 1250",
+                    "telefone" : "4444-5555",
+                    "url_foto" : "./assets/imagens/icone-usuario.jpg"
+                },
+                {
+                    "nome" : "Elisia",
+                    "endereco" : "Av dos Estados, 12512",
+                    "telefone" : "4444-9999",
+                    "url_foto" : "./assets/imagens/icone-usuario.jpg"
+                }
 
-
+            ]
+        }    
+        
+        exibirDadosLinhaSelecionada(item: any): any {                 
+            this.dadosCliente = item;        
+        }
 }

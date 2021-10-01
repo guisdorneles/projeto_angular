@@ -9,15 +9,15 @@ import { DataServiceMenu } from './shared/services/data.service.menu';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,   
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     AppRoutingModule,
     NavegacaoModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,         
   ],
   providers: [DataServiceMenu],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule { } 

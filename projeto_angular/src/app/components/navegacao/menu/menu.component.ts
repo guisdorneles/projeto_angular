@@ -46,7 +46,7 @@ constructor(private data: DataServiceMenu) {}
           icone: "bi bi-file-bar-graph",
           rota: "/graficos",
           habilitado: true
-        },        
+        },       
         {
           descricao: "Configuração",
           icone: "bi bi-gear-fill",

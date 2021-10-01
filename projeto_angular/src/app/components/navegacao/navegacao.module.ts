@@ -9,6 +9,8 @@ import { NotFoundComponent } from "./not-found/not-found.component";
 import { ChartsModule } from 'ng2-charts';
 import { GraficosComponent } from "../graficos/graficos.component";
 import { LoginComponent } from "../login/login.component";
+import { GridModule } from "../grid/grid.module";  
+
 
 @NgModule({
     declarations: [
@@ -18,12 +20,14 @@ import { LoginComponent } from "../login/login.component";
         FooterComponent,
         GraficosComponent,
         NotFoundComponent,
-        LoginComponent
+        LoginComponent,
+         
     ],
     imports: [
         CommonModule,
         RouterModule,
-        ChartsModule
+        ChartsModule,
+        GridModule,
     ],
     exports: [
         HeaderComponent,

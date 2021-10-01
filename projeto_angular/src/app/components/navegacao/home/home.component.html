@@ -1,0 +1,7 @@
+<app-grid [dados] = "dadosComponent" (dadosLinhaSelecionada) = "exibirDadosLinhaSelecionada($event)"></app-grid>
+
+<div *ngIf="dadosCliente != null">
+    <span>{{dadosCliente.nome}}</span>
+    <span>{{dadosCliente.endereco}}</span>
+    <span>{{dadosCliente.telefone}}</span>
+</div>
