@@ -1,11 +1,11 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.css']
 })
-export class GridComponent implements OnInit {
+export class GridComponent implements OnChanges {
   @Input() dados: any;
   @Output() dadosLinhaSelecionada = new EventEmitter<any>();
   btnDesativado : boolean = true;
@@ -14,9 +14,11 @@ export class GridComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }  
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+  }
 
+ 
   returnZero() {
     return 0
   }

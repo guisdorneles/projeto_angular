@@ -10,6 +10,7 @@ import { ChartsModule } from 'ng2-charts';
 import { GraficosComponent } from "../graficos/graficos.component";
 import { LoginComponent } from "../login/login.component";
 import { GridModule } from "../grid/grid.module";  
+import { VisualizarDadosModule } from "../visualizar-dados/visualizar-dados.module";
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { GridModule } from "../grid/grid.module";
         RouterModule,
         ChartsModule,
         GridModule,
+        VisualizarDadosModule
     ],
     exports: [
         HeaderComponent,

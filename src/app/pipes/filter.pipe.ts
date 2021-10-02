@@ -11,7 +11,7 @@ export class FilterPipe implements PipeTransform {
    * @param tipoGrid indica qual será o campos a serem utilizados como fltro
    * @returns lista de elementos filtrada
    */
-  transform(lista: any[], texto: string, tipoGrid: number): any[] {
+  transform(lista: any[], texto: string): any[] {
     debugger;
     if (!lista) {
       return [];
@@ -21,19 +21,17 @@ export class FilterPipe implements PipeTransform {
     }
     texto = texto.toLocaleLowerCase();
 
-    if(tipoGrid === 1){
+    if(lista[0].hasOwnProperty("endereco")){
       return lista.filter(it => {
         return (it.nome.toLocaleLowerCase().includes(texto) 
         || it.endereco.toLocaleLowerCase().includes(texto)
-        || it.telefone.toLocaleLowerCase().includes(texto)
         );
       });
     }
     else{
       return lista.filter(it => {
         return (it.nome.toLocaleLowerCase().includes(texto) 
-        || it.endereco.toLocaleLowerCase().includes(texto)
-        || it.celular.toLocaleLowerCase().includes(texto)
+        || it.pais.toLocaleLowerCase().includes(texto)
         );
       });
     }

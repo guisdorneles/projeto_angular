@@ -1,4 +1,4 @@
-import { OnInit } from "@angular/core";
+import { EventEmitter, OnInit, Output } from "@angular/core";
 import { Component } from "@angular/core";
  
 @Component({
@@ -10,7 +10,7 @@ import { Component } from "@angular/core";
 export class HomeComponent implements OnInit{
     ngOnInit(): void {}
     dadosCliente: any;
-    dadosComponent : any = 
+    dataSource : any = 
         {
             "texto_placeholder": "Pesquisar por nome",
             "cabecalho" : ["Nome", "Endereço", "Telefone"],
@@ -39,5 +39,11 @@ export class HomeComponent implements OnInit{
         
         exibirDadosLinhaSelecionada(item: any): any {                 
             this.dadosCliente = item;        
+        }
+
+        exibirNovaFonteDados(item: any) : any{
+            console.log("componente visualizarDados");
+            console.log(JSON.stringify(item));
+            this.dataSource = item;
         }
 }
