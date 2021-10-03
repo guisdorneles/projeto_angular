@@ -16,6 +16,7 @@ export class GridComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
+    this.texto = "";
   }
 
  
