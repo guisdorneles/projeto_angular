@@ -1,5 +1,6 @@
 import { EventEmitter, OnInit, Output } from "@angular/core";
 import { Component } from "@angular/core";
+import { GridService } from "src/app/shared/services/grid.service";
  
 @Component({
     selector: 'app-home',
@@ -8,10 +9,17 @@ import { Component } from "@angular/core";
 })
 
 export class HomeComponent implements OnInit{
-    ngOnInit(): void {}
+    
+    constructor(private gridService: GridService) {
+        gridService = new GridService();  
+      }
+    
+    ngOnInit(): void {
+        this.exibirFonteDados();
+    }
+
     dadosCliente: any;
-    dataSource : any = 
-        {
+    dataSource : any = {
             "texto_placeholder": "Pesquisar por nome",
             "cabecalho" : ["Nome", "Endereço", "Telefone"],
             "dataSet" : [
@@ -41,9 +49,8 @@ export class HomeComponent implements OnInit{
             this.dadosCliente = item;        
         }
 
-        exibirNovaFonteDados(item: any) : any{
-            console.log("componente visualizarDados");
-            console.log(JSON.stringify(item));
-            this.dataSource = item;
+        exibirFonteDados() : void{ 
+            this.gridService.msgExibeGrid(true);  
+            this.gridService.msgDadosGrid(this.dataSource);  
         }
 }

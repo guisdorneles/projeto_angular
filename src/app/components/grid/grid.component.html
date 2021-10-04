@@ -1,21 +1,22 @@
-<input type="text" class="form-control" placeholder="{{dados.texto_placeholder}}" [(ngModel)]="texto"> 
-<table class="table">
-    <thead>
-        <tr>
-            <th *ngFor="let itemCabecalho of dados.cabecalho">{{itemCabecalho}}</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let itemDataSet of dados.dataSet | appFilter : texto">           
-            <td *ngFor = "let item of itemDataSet | keyvalue: returnZero; first as primeiroItem; last as ultimoItem"> 
-                <label *ngIf="primeiroItem">
-                    <input class="radioBtn" type="radio" name="optradio" (click)="obterDados(itemDataSet)">{{item.value}}
-                </label>
-                <span *ngIf="!primeiroItem && !ultimoItem">{{item.value}}</span>
-                <img src = {{item.value}} class="foto" *ngIf="ultimoItem" />
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<input type="button" class="btn btn-success" [disabled]="btnDesativado" value="Enviar dados" (click)="enviarDados()" />
+<div *ngIf = "exibiGrid">
+    <input type="text" class="form-control" placeholder="{{dados.texto_placeholder}}" [(ngModel)]="texto"> 
+    <table class="table" >
+        <thead>
+            <tr>
+                <th *ngFor="let itemCabecalho of dados.cabecalho">{{itemCabecalho}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let itemDataSet of dados.dataSet | appFilter : texto">           
+                <td *ngFor = "let item of itemDataSet | keyvalue: returnZero; first as primeiroItem; last as ultimoItem"> 
+                    <label *ngIf="primeiroItem">
+                        <input class="radioBtn" type="radio" name="optradio" (click)="obterDados(itemDataSet)">{{item.value}}
+                    </label>
+                    <span *ngIf="!primeiroItem && !ultimoItem">{{item.value}}</span>
+                    <img src = {{item.value}} class="foto" *ngIf="ultimoItem" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="button" class="btn btn-success" [disabled]="btnDesativado" value="Enviar dados" (click)="enviarDados()" />
+</div>

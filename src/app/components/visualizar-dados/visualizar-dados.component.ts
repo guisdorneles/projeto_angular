@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { GridService } from 'src/app/shared/services/grid.service';
 
 @Component({
   selector: 'app-visualizar-dados',
@@ -9,8 +10,9 @@ export class VisualizarDadosComponent implements OnInit {
 
   @Output() novoDataSource = new EventEmitter<any>();
 
-constructor() {
-}
+  constructor(private gridService: GridService) {
+    gridService = new GridService();  
+  }
 
   ngOnInit(): void {    
   };
@@ -43,6 +45,7 @@ constructor() {
   } 
 
   carregarNovaFonteDados(): any{
-    this.novoDataSource.emit(this.dadosCliente);
+    this.gridService.msgExibeGrid(true);   
+    this.gridService.msgDadosGrid(this.dadosCliente);  
   }
 }

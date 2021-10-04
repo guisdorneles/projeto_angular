@@ -12,7 +12,7 @@ export class FilterPipe implements PipeTransform {
    * @returns lista de elementos filtrada
    */
   transform(lista: any[], texto: string): any[] {
-    debugger;
+   
     if (!lista) {
       return [];
     }

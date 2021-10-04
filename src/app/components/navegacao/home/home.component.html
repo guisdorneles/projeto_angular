@@ -1,8 +1,8 @@
-<app-grid [dados] = "dataSource" (dadosLinhaSelecionada) = "exibirDadosLinhaSelecionada($event)"></app-grid>
+<app-grid (dadosLinhaSelecionada) = "exibirDadosLinhaSelecionada($event)"></app-grid>
 
 <br /> 
 <br /> 
-<app-visualizar-dados (novoDataSource) = "exibirNovaFonteDados($event)"></app-visualizar-dados>
+<app-visualizar-dados></app-visualizar-dados>
 <br /> 
 <br /> 
 <div *ngIf="dadosCliente != null">

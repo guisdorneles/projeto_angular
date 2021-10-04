@@ -11,7 +11,7 @@ export class CustomCurrencyPipe implements PipeTransform {
    */
   
   transform(valor: string): string {
-    debugger;
+   
     let arrayValores = [];
     arrayValores = parseFloat(valor).toFixed(2).split('.');
     arrayValores[0] = "R$ " + arrayValores[0].split(/(?=(?:...)*$)/).join('.');
