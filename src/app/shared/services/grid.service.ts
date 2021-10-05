@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs'; 
+import { BehaviorSubject, observable, Observable } from 'rxjs'; 
 
 @Injectable()
 export class GridService {
+
+
 
   private exibeGrid = new BehaviorSubject<any>(null);
   mensagemExibeGrid = this.exibeGrid.asObservable();
 
   private dadosGrid = new BehaviorSubject<boolean>(null);
   mensagemDadosGrid = this.dadosGrid.asObservable();
-  
 
   constructor() { }
 
@@ -20,5 +21,6 @@ export class GridService {
   msgDadosGrid(mensagem: any) {
     this.dadosGrid.next(mensagem)
   }
+
 
 }

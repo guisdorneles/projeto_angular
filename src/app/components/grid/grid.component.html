@@ -1,13 +1,14 @@
 <div *ngIf = "exibiGrid">
     <input type="text" class="form-control" placeholder="{{dados.texto_placeholder}}" [(ngModel)]="texto"> 
-    <table class="table" >
+    <span *ngIf="(dados.dataSet | appFilter : texto).length === 0">Dados não localizados</span>
+    <table class="table" *ngIf="(dados.dataSet | appFilter : texto).length !== 0">
         <thead>
             <tr>
                 <th *ngFor="let itemCabecalho of dados.cabecalho">{{itemCabecalho}}</th>
             </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor = "let itemDataSet of dados.dataSet | appFilter : texto">           
+        </thead>        
+        <tbody *ngIf="(dados.dataSet | appFilter : texto).length !== 0">              
+            <tr *ngFor = "let itemDataSet of dados.dataSet | appFilter : texto" >           
                 <td *ngFor = "let item of itemDataSet | keyvalue: returnZero; first as primeiroItem; last as ultimoItem"> 
                     <label *ngIf="primeiroItem">
                         <input class="radioBtn" type="radio" name="optradio" (click)="obterDados(itemDataSet)">{{item.value}}
@@ -18,5 +19,8 @@
             </tr>
         </tbody>
     </table>
+    <div class="areaBtns">
     <input type="button" class="btn btn-success" [disabled]="btnDesativado" value="Enviar dados" (click)="enviarDados()" />
+    </div>
+    
 </div>
