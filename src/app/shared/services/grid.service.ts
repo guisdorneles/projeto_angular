@@ -4,8 +4,6 @@ import { BehaviorSubject, observable, Observable } from 'rxjs';
 @Injectable()
 export class GridService {
 
-
-
   private exibeGrid = new BehaviorSubject<any>(null);
   mensagemExibeGrid = this.exibeGrid.asObservable();
 

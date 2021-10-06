@@ -5,12 +5,10 @@ import { HeaderComponent } from "./header/header.component";
 import { MenuComponent } from "./menu/menu.component";
 import { HomeComponent } from "./home/home.component";
 import { FooterComponent } from "./footer/footer.component";
-import { NotFoundComponent } from "./not-found/not-found.component";
 import { ChartsModule } from 'ng2-charts';
-import { GraficosComponent } from "../graficos/graficos.component";
-import { LoginComponent } from "../login/login.component";
-import { GridModule } from "../grid/grid.module";  
-import { VisualizarDadosModule } from "../visualizar-dados/visualizar-dados.module";
+import { GraficosComponent } from "./graficos/graficos.component";
+import { GridModule } from "../grid/grid.module"; 
+import { TabelaComponent } from "./tabela/tabela.component";
 
 
 @NgModule({
@@ -19,17 +17,14 @@ import { VisualizarDadosModule } from "../visualizar-dados/visualizar-dados.modu
         MenuComponent,
         HomeComponent, 
         FooterComponent,
-        GraficosComponent,
-        NotFoundComponent,
-        LoginComponent,
-         
+        GraficosComponent,        
+        TabelaComponent 
     ],
     imports: [
         CommonModule,
         RouterModule,
         ChartsModule,
-        GridModule,
-        VisualizarDadosModule
+        GridModule
     ],
     exports: [
         HeaderComponent,
@@ -37,8 +32,7 @@ import { VisualizarDadosModule } from "../visualizar-dados/visualizar-dados.modu
         HomeComponent, 
         FooterComponent,
         GraficosComponent,
-        NotFoundComponent,
-        LoginComponent
+        TabelaComponent
     ]
 })   
 

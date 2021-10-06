@@ -1,8 +1,8 @@
 
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'appFilter' })
-export class FilterPipe implements PipeTransform {
+@Pipe({ name: 'filtroBuscaGrid' })
+export class FiltroBuscaPipe implements PipeTransform {
   /**
    * Pipe que filtra uma lista de elementos utilizando o valor digitado em um campo texto
    *

@@ -6,11 +6,13 @@ import { NavegacaoModule } from './components/navegacao/navegacao.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DataServiceMenu } from './shared/services/data.service.menu';
 import { GridService } from './shared/services/grid.service';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,   
+    AppComponent, 
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule, 

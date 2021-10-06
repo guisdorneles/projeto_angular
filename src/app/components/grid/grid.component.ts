@@ -8,11 +8,9 @@ import { GridService } from 'src/app/shared/services/grid.service';
 })
 export class GridComponent implements OnInit {
   dados: any;
-  exibiGrid: boolean;
   @Output() dadosLinhaSelecionada = new EventEmitter<any>();
-  btnDesativado : boolean = true;
   linhaSelecionada : any; 
-  texto = "";
+  textoBusca: string = "";
 
   constructor(private gridService: GridService) { }
 
@@ -25,18 +23,15 @@ export class GridComponent implements OnInit {
   }
 
   obterDados(itemSelecionado: any): any{
-     this.btnDesativado = false;
      this.linhaSelecionada = itemSelecionado;   
   }
 
   enviarDados(): any{
     this.dadosLinhaSelecionada.emit(this.linhaSelecionada);
-    this.exibiGrid = false; 
-    this.texto =  "";
+    this.textoBusca =  "";
   }
 
   carregarComponente() : void{    
-    this.gridService.mensagemExibeGrid.subscribe(exibiGrid => this.exibiGrid = exibiGrid);
     var r = this.gridService.mensagemDadosGrid.subscribe(dadosGrid => this.dados = dadosGrid);
   }
 }

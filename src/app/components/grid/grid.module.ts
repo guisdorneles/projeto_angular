@@ -1,19 +1,20 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { GridComponent } from "./grid.component";
-import { FilterPipe } from "src/app/pipes/filter.pipe";
+import { FiltroBuscaPipe } from "src/app/pipes/filtro-busca.pipe";
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-    imports: 
-    [
+    imports: [
         CommonModule,
         FormsModule
     ],
-    exports: [GridComponent],
+    exports: [
+        GridComponent
+    ],
     declarations: [
         GridComponent, 
-        FilterPipe
+        FiltroBuscaPipe
     ],
     providers: [],
  })
