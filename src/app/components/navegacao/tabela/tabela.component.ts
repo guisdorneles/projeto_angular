@@ -20,25 +20,29 @@ ngOnInit(): void {
 dadosCliente: any;
 dataSource : any = {
         "texto_placeholder": "Pesquisar por nome",
-        "cabecalho" : ["Nome", "Endereço", "Telefone"],
+        "colunas_pesquisaveis": ["nome", "municipio"],
+        "colunas" : ["Nome", "Endereço", "Município", "Estado", "Telefone"],
         "dataSet" : [
             {
                 "nome" : "Guilherme",
                 "endereco" : "Rua do Bosque, 236",
-                "telefone" : "4444-4444",
-                "url_foto" : "./assets/imagens/icone-usuario.jpg"
+                "municipio" : "Santo André",
+                "estado" : "São Paulo",
+                "telefone" : "4444-4444"
             },
             {
                 "nome" : "Kelly",
                 "endereco" : "Av dos Estados, 1250",
-                "telefone" : "4444-5555",
-                "url_foto" : "./assets/imagens/icone-usuario.jpg"
+                "municipio" : "Salto",
+                "estado" : "São Paulo",
+                "telefone" : "4444-5555"
             },
             {
                 "nome" : "Elisia",
                 "endereco" : "Av dos Estados, 12512",
-                "telefone" : "4444-9999",
-                "url_foto" : "./assets/imagens/icone-usuario.jpg"
+                "municipio" : "Caldas Novas",
+                "estado" : "Goiás",
+                "telefone" : "4444-9999"
             }
 
         ]
