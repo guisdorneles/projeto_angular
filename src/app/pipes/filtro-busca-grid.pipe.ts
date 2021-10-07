@@ -10,29 +10,22 @@ export class FiltroBuscaPipe implements PipeTransform {
    * @param texto texto digitado a ser procurado na lista
    * @returns lista de elementos filtrada
    */
-  transform(lista: any[], textoBusca: string, colunasBuscaveis: string[]): any[] {
+  transform(lista: any[], textoPesquisa: string, colunasPesquisa: string[]): any[] {
 
     if (!lista) {
       return [];
     }
-    if (!textoBusca) {
+    if (!textoPesquisa) {
       return lista;
     }
 
-    textoBusca = textoBusca.toLocaleLowerCase();
+    textoPesquisa = textoPesquisa.toLocaleLowerCase();
     debugger;  
-    let arrayCamposBuscaveis = Object.keys(lista[0]).filter(item => colunasBuscaveis.includes(item));
+    let arrayCamposBuscaveis = Object.keys(lista[0]).filter(item => colunasPesquisa.includes(item));
     return lista.filter(item => {
       return Object.values(arrayCamposBuscaveis).some(key => {
-        return String(item[key]).toLowerCase().includes(textoBusca.toLowerCase());
+        return String(item[key]).toLowerCase().includes(textoPesquisa.toLowerCase());
       });
     });   
-     
-    // textoBusca = textoBusca.toLocaleLowerCase();
-    //   return lista.filter(it => {
-    //     return (it.nome.toLocaleLowerCase().includes(textoBusca) 
-    //     || it.endereco.toLocaleLowerCase().includes(textoBusca)
-    //     );
-    //   });
   }
 }
