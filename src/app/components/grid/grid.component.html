@@ -13,16 +13,4 @@
             </td>
         </tr>
     </tbody>    
-    <!-- <tbody>
-        <tr *ngFor="let itemDataSet of dados.dataSet | filtroBuscaGrid : textoBusca: ['nome', 'municipio']">
-            <td *ngFor="let item of itemDataSet | keyvalue: returnZero; first as primeiroItem; last as ultimoItem">
-                <label *ngIf="primeiroItem">
-                    <input class="radioBtn" type="radio" name="optradio"
-                        (click)="obterDados(itemDataSet)">{{item.value}}
-                </label>
-                <span *ngIf="!primeiroItem && !ultimoItem">{{item.value}}</span>
-                <img src={{item.value}} class="foto" *ngIf="ultimoItem" />
-            </td>
-        </tr>
-    </tbody> -->
 </table>
