@@ -1,0 +1,30 @@
+<div *ngIf="arquivoAtual" class="progress">
+    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+        attr.aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progress + '%' }">
+        {{ progress }}%
+    </div>
+</div>
+
+{{ progress }}%
+<input #uploader hidden type="file" (change)="selecionarArquivo($event)" />
+<a href="javascript:void(0)" (click)="uploader.click()"  *ngIf="!arquivoSelecionado">Clique Aqui!</a>
+
+<br /><br />
+<span *ngIf="arquivoSelecionado">{{nomeArquivo}} ({{tamanhoArquivo}} MB)
+    <a href="javascript:void(0)" (click)="limparSelecaoArquivo()">X</a>
+</span>
+<br /><button class="btn btn-success" [disabled]="!arquivoSelecionado" (click)= "upload()">
+    Upload
+</button>
+
+<div class="alert alert-light" role="alert">{{ message }}</div>
+
+<div class="card">
+    <div class="card-header">Lista de arquivos</div>
+    <ul class="list-group list-group-flush" *ngFor="let arquivo of listaArquivos.dados_arquivos">
+        <li class="list-group-item">
+            {{arquivo.nome_arquivo}}
+        </li>
+    </ul>
+</div>
+<!-- https://www.c-sharpcorner.com/article/how-to-create-dynamic-progress-bar-in-angular-application/ -->

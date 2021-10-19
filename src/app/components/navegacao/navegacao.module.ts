@@ -9,6 +9,7 @@ import { ChartsModule } from 'ng2-charts';
 import { GraficosComponent } from "./graficos/graficos.component";
 import { GridModule } from "../grid/grid.module"; 
 import { TabelaComponent } from "./tabela/tabela.component";
+import { UploadModule } from "../upload/upload.module";
 
 
 @NgModule({
@@ -18,13 +19,14 @@ import { TabelaComponent } from "./tabela/tabela.component";
         HomeComponent, 
         FooterComponent,
         GraficosComponent,        
-        TabelaComponent 
+        TabelaComponent,
     ],
     imports: [
         CommonModule,
         RouterModule,
         ChartsModule,
-        GridModule
+        GridModule,
+        UploadModule
     ],
     exports: [
         HeaderComponent,

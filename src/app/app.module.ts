@@ -7,22 +7,28 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DataServiceMenu } from './shared/services/data.service.menu';
 import { GridService } from './shared/services/grid.service';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-
+import { LoginComponent } from './components/login/login.component';
+import { UploadArquivoService } from './shared/services/upload.service';
+import { HttpClientModule } from '@angular/common/http';
+ 
 
 @NgModule({
   declarations: [
     AppComponent, 
     NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule, 
     AppRoutingModule,
     NavegacaoModule,
-    BrowserAnimationsModule,         
+    BrowserAnimationsModule,   
+    HttpClientModule       
   ],
   providers: [
     DataServiceMenu,
-    GridService
+    GridService,
+    UploadArquivoService
   ],
   bootstrap: [AppComponent],
 })

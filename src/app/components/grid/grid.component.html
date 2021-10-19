@@ -1,6 +1,6 @@
 <input type="text" class="form-control" placeholder="{{dados.texto_placeholder}}" [(ngModel)]="textoBusca">
 <span *ngIf="(dados.dataSet | filtroBuscaGrid : textoBusca: dados.colunas_pesquisaveis).length === 0">Dados não localizados</span>
-<table class="table table-component" *ngIf="(dados.dataSet | filtroBuscaGrid : textoBusca: dados.colunas_pesquisaveis).length !== 0">
+<table class="table table-component table-striped" *ngIf="(dados.dataSet | filtroBuscaGrid : textoBusca: dados.colunas_pesquisaveis).length !== 0">
     <thead>
         <tr>
             <th *ngFor="let coluna of dados.colunas">{{coluna}}</th>

@@ -1,0 +1,22 @@
+.container-login{
+    padding-top: 150px;
+    padding-bottom: 40px;      
+}
+
+.form-login{
+    width: 350px;
+    height: 400px;
+    display: flex;
+    background-color: red;
+    position: absolute;
+    margin: 0 auto;
+    top: 22%;
+    left: 3%;
+}
+
+@media screen and (min-width: 768px) {
+.form-login{
+        top: 25%;
+        left: 39%;
+    }
+}
