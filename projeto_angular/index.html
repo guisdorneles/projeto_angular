@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Apresentação</title>
+  <style>
+    body{
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    background-color: #252827;
+  }
+  .foto{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    margin-top: 25px;
+  }
+  header h1{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0;
+  }
+    
+   header p{
+     text-align: center;
+     margin-bottom: 0;
+   }
+  
+  .hexa{
+    border: 0px;
+    float: left;
+    text-align: center;
+    height: 35px;
+    width: 60px;
+    font-size: 22px;
+    background: #f0f0f0;
+    color: #3c3c3c;
+    position: relative;
+    margin-top: 15px;
+  }
+  
+  .hexa:before{
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    width: 0; 
+    height: 0;
+    border-bottom: 15px solid #f0f0f0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    top: -15px;
+  }
+  
+  .hexa:after{
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    width: 0; 
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 15px solid #f0f0f0;
+    bottom: -15px;
+  }
+  
+  .timeline {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    margin-top: 20px;
+    list-style-type: none;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .timeline h1 {
+    color: #999;
+  }
+  
+  .timeline:before {
+    position: absolute;
+    left: 50%;
+    top: 260px;
+    content: ' ';
+    display: block;
+    width: 2px;
+    height: 92%;
+    margin-left: -1px;
+    background: rgb(213,213,213);
+    background: -moz-linear-gradient(top, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(100%,rgba(125,185,232,1)));
+    background: -webkit-linear-gradient(top, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
+    background: -o-linear-gradient(top, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
+    background: -ms-linear-gradient(top, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
+    background: linear-gradient(to bottom, rgba(213,213,213,0) 0%, rgb(213,213,213) 8%, rgb(213,213,213) 92%, rgba(213,213,213,0) 100%);
+    z-index: 5;
+  }
+  
+  .timeline li {
+    padding: 2em 0;
+  }
+  
+  .timeline .hexa{
+    width: 16px;
+    height: 10px;
+    position: absolute;
+    background: #ec7000;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    margin-left:auto;
+    margin-right:auto;
+    top: -30px;
+    margin-top: 0;
+  }
+  
+  .timeline .hexa:before {
+    border-bottom: 4px solid #ec7000;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    top: -4px;
+  }
+  
+  .timeline .hexa:after {
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-top: 4px solid #ec7000;
+    bottom: -4px;
+  }
+  
+  .direction-l,
+  .direction-r {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .flag-wrapper {
+    text-align: center;
+    position: relative;
+  }
+  
+  .flag {
+    position: relative;
+    display: inline;
+    background: rgb(255,255,255);
+    font-weight: 600;
+    z-index: 15;
+    padding: 6px 10px;
+    text-align: left;
+    border-radius: 5px;
+  }
+  
+  .direction-l .flag:after,
+  .direction-r .flag:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    height: 0;
+    width: 0;
+    margin-left: -8px;
+    border: solid transparent;
+    border-bottom-color: rgb(255,255,255);
+    border-width: 8px;
+    pointer-events: none;
+  }
+  
+  .direction-l .flag {
+    -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  }
+  
+  .direction-r .flag {
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  }
+  
+  .time-wrapper {
+    display: block;
+    position: relative;
+    margin: 4px 0 0 0;
+    z-index: 14;
+    line-height: 1em;
+    vertical-align: middle;
+    color: #fff;
+  }
+  
+  .direction-l .time-wrapper {
+    float: none;
+  }
+  
+  .direction-r .time-wrapper {
+    float: none;
+  }
+  
+  .time {
+    background: #ec7000;
+    display: inline-block;
+    padding: 8px;
+    margin: 0 10px;
+    border-radius: 3px;
+  }
+  
+  .desc {
+    position: relative;
+    margin: 1em 0 0 0;
+    padding: 1em;
+    background: rgba(255, 255, 255, 0.1);
+    
+    color: #999;
+    -webkit-box-shadow: 0 0 1px rgba(0,0,0,0.20);
+    -moz-box-shadow: 0 0 1px rgba(0,0,0,0.20);
+    box-shadow: 0 0 1px rgba(0,0,0,0.20);
+    z-index: 15;
+    border-radius: 4px;
+  }
+  
+
+  .timeline .hexa .futuro{
+    background: blue !important;
+  }
+  .timeline .hexa .futuro:before{
+    background: blue !important;
+  }
+
+  .timeline .hexa .futuro:after{
+    background: blue !important;
+  }
+  .direction-l .desc,
+  .direction-r .desc {
+    position: relative;
+    margin: 1em 1em 0 1em;
+    padding: 1em;
+    z-index: 15;
+  }
+  
+  @media(min-width: 768px){
+    .timeline {
+      width: 660px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+  
+    .timeline li:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+    
+    .timeline .hexa {
+      left: -28px;
+      right: auto;
+      top: 8px;
+    }
+  
+    .timeline .direction-l .hexa {
+      left: auto;
+      right: -28px;
+    }
+  
+    .direction-l {
+      position: relative;
+      width: 310px;
+      float: left;
+      text-align: right;
+    }
+  
+    .direction-r {
+      position: relative;
+      width: 310px;
+      float: right;
+      text-align: left;
+    }
+  
+    .flag-wrapper {
+      display: inline-block;
+    }
+    
+    .flag {
+      font-size: 18px;
+    }
+  
+    .direction-l .flag:after {
+      left: auto;
+      right: -16px;
+      top: 50%;
+      margin-top: -8px;
+      border: solid transparent;
+      border-left-color: rgb(254,254,254);
+      border-width: 8px;
+    }
+  
+    .direction-r .flag:after {
+      top: 50%;
+      margin-top: -8px;
+      border: solid transparent;
+      border-right-color: rgb(254,254,254);
+      border-width: 8px;
+      left: -8px;
+    }
+  
+    .time-wrapper {
+      display: inline;
+      vertical-align: middle;
+      margin: 0;
+    }
+  
+    .direction-l .time-wrapper {
+      float: left;
+    }
+  
+    .direction-r .time-wrapper {
+      float: right;
+    }
+  
+    .time {
+      padding: 5px 10px;
+    }
+  
+    .direction-r .desc {
+      margin: 1em 0 0 0.75em;
+    }
+  }
+  
+  @media(min-width: 992px){
+    .timeline {
+      width: 800px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+  
+    .direction-l {
+      position: relative;
+      width: 380px;
+      float: left;
+      text-align: right;
+    }
+  
+    .direction-r {
+      position: relative;
+      width: 380px;
+      float: right;
+      text-align: left;
+    }
+  }
+  </style>
+</head>
+
+<body>
+
+  <ul class="timeline">
+    <img src="imagens/1598034894114.jfif" class="foto">
+    <h1>Guilherme | Engenheiro de Software</h1>
+    <li>
+      <div class="direction-r">
+        <div class="flag-wrapper">
+          <span class="hexa"></span>
+          <span class="flag">Ensino Médio Técnico</span>
+          <span class="time-wrapper"><span class="time">2008 | 11</span></span>
+        </div>
+        <div class="desc">Técnico em Informática - Colégio Técnico Singular</div>
+      </div>
+    </li>
+
+    <li>
+      <div class="direction-l">
+        <div class="flag-wrapper">
+          <span class="hexa"></span>
+          <span class="flag">Estágio</span>
+          <span class="time-wrapper"><span class="time">2009</span></span>
+        </div>
+        <div class="desc">Tribunal de Justiça de Santo André</div>
+        <div class="desc">EMTU - Empresa Metropolitana de Transportes Urbanos</div>
+      </div>
+    </li>
+    <li>
+      <div class="direction-r">
+        <div class="flag-wrapper">
+          <span class="hexa"></span>
+          <span class="flag">Estágio</span>
+          <span class="time-wrapper"><span class="time">2011</span></span>
+        </div>
+        <div class="desc">JN Moura Informática</div>
+        <div class="desc">Integra Sistemas </div>
+      </div>
+    </li>
+    <li>
+      <div class="direction-l">
+        <div class="flag-wrapper">
+          <span class="hexa"></span>
+          <span class="flag">De Estágio para Efetivo</span>
+          <span class="time-wrapper"><span class="time">2012 | 15</span></span>
+        </div>
+        <div class="desc">Integra Sistemas </div>
+      </div>
+    </li>
+    <li>
+      <div class="direction-l">
+        <div class="flag-wrapper">
+          <span class="hexa"></span>
+          <span class="flag">Graduação</span>
+          <span class="time-wrapper"><span class="time">2012 | 15</span></span>
+        </div>
+        <div class="desc">Bacharelado em Ciências da Computação - Universidade Municipal de São Caetano do Sul  </div>
+      </div>
+    </li>
+    <li>
+      <div class="direction-r">
+        <div class="flag-wrapper">
+          <span class="hexa"></span>
+          <span class="flag">Atividade Profissional</span>
+          <span class="time-wrapper"><span class="time">2015 | 17</span></span>
+        </div>
+        <div class="desc">GlobalWeb Outsourcing - Analista Programador Pleno</div>        
+        <div class="desc">GlobalWeb Outsourcing - Desenvolvedor Sênior </div>        
+      </div>
+    </li>
+    <li>
+      <div class="direction-r">
+        <div class="flag-wrapper">
+          <span class="hexa"></span>
+          <span class="flag">Idioma</span>
+          <span class="time-wrapper"><span class="time">2016 | 18</span></span>
+        </div>
+        <div class="desc">Inglês - Wizard</div>                
+      </div>
+    </li>
+    <li>
+      <div class="direction-l">
+        <div class="flag-wrapper">
+          <span class="hexa"></span>
+          <span class="flag">Certificação</span>
+          <span class="time-wrapper"><span class="time">2018</span></span>
+        </div>
+        <div class="desc">Scrum Fundamentals Certified </div>                
+      </div>
+    </li>    
+    <li>
+      <div class="direction-l">
+        <div class="flag-wrapper">
+          <span class="hexa"></span>
+          <span class="flag">Pós-Graduação</span>
+          <span class="time-wrapper"><span class="time">2017 | 18</span></span>
+        </div>
+        <div class="desc">MBA Arquitetura e desenvolvimento na plataforma .NET - Faculdade de Informática e Administração Paulista (FIAP)  </div>
+      </div>
+    </li>    
+    <li>
+      <div class="direction-l">
+        <div class="flag-wrapper">
+          <span class="hexa"></span>
+          <span class="flag">Atividade Profissional</span>
+          <span class="time-wrapper"><span class="time">2017 | 20</span></span>
+        </div>
+        <div class="desc">Indra Brasil Soluções e Serviços Tecnológicos SA - Analista de Sistemas</div>               
+      </div>
+    </li>
+    <li>
+      <div class="direction-l">
+        <div class="flag-wrapper">
+          <span class="hexa"></span>
+          <span class="flag">Atividade Profissional</span>
+          <span class="time-wrapper"><span class="time">2020</span></span>
+        </div>
+        <div class="desc">Banco Pan S.A - Desenvolvedor Backend Pleno</div>               
+      </div>
+    </li>  
+    <li>
+      <div class="direction-r">
+        <div class="flag-wrapper">
+          <span class="hexa"></span>
+          <span class="flag">Atividade Profissional</span>
+          <span class="time-wrapper"><span class="time">2020 | atual</span></span>
+        </div>
+        <div class="desc">Banco Itaú S.A - Engenheiro de Software Pleno</div>               
+      </div>
+    </li>   
+    <li>
+      <div class="direction-l">
+        <div class="flag-wrapper">
+          <span class="hexa futuro"></span>
+          <span class="flag">Objetivos Futuros</span>          
+        </div>
+        <div class="desc">Certificação AWS</div>               
+        <div class="desc">Crescimento Profissional - Arquiteto | Especialista</div>
+        <div class="desc">Aperfeiçoar Idioma - Viagem Internacional </div>
+      </div>
+    </li>      
+  </ul>
+  <script src='javascript/jquery.min.js'></script>
+
+  <script>
+    $('.member-title').click(function (e) {
+      $(this).next().slideToggle();
+    })
+  </script>
+
+</body>
+
+</html>
